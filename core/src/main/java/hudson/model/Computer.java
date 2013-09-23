@@ -1220,7 +1220,7 @@ public /*transient*/ abstract class Computer extends Actionable implements Acces
     /**
      * Replaces the current {@link Node} by another one.
      */
-    private void replaceBy(Node newNode) throws ServletException, IOException {
+    private void replaceBy(Node newNode) throws IOException {
         final Jenkins app = Jenkins.getInstance();
 
         // replace the old Node object by the new one
@@ -1241,7 +1241,7 @@ public /*transient*/ abstract class Computer extends Actionable implements Acces
      *
      * @since 1.526
      */
-    public void updateByXml(final InputStream source) throws IOException, ServletException {
+    public void updateByXml(final InputStream source) throws IOException {
         checkPermission(CONFIGURE);
         Node result = (Node)Jenkins.XSTREAM2.fromXML(source);
         replaceBy(result);

@@ -26,8 +26,6 @@ package hudson.cli;
 
 import java.io.IOException;
 
-import javax.servlet.ServletException;
-
 import hudson.Extension;
 import hudson.model.Node;
 
@@ -50,7 +48,7 @@ public class UpdateNodeCommand extends CLICommand {
     }
 
     @Override
-    protected int run() throws IOException, ServletException {
+    protected int run() throws IOException {
 
         node.toComputer().updateByXml(stdin);
 
