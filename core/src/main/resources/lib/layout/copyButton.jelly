@@ -47,8 +47,8 @@ THE SOFTWARE.
     </st:attribute>
   </st:documentation>
 
-  <span class="copy-button" tooltip="${attrs.tooltip}" text="${attrs.text}" message="${attrs.message}" container="${attrs.container}">
-    <input type="button"/>
+  <span class="copy-button" tooltip="${attrs.tooltip}" message="${attrs.message}" container="${attrs.container}">
+    <button data-clipboard-text="${attrs.text}"/>
   </span>
   <st:adjunct includes="lib.layout.copyButton.copyButton"/>
 </j:jelly>
