@@ -193,16 +193,12 @@ public abstract class AbstractBuild<P extends AbstractProject<P,R>,R extends Abs
     void dropLinks() {
         super.dropLinks();
 
-        if(nextBuild!=null) {
-            AbstractBuild nb = nextBuild.get();
-            if (nb!=null) {
-                nb.previousBuild = previousBuild;
-            }
+        AbstractBuild nb = getNextBuild();
+        if (nb!=null) {
+            nb.previousBuild = previousBuild;
         }
-        if(previousBuild!=null) {
-            AbstractBuild pb = previousBuild.get();
-            if (pb!=null)   pb.nextBuild = nextBuild;
-        }
+        AbstractBuild pb = getPreviousBuild();
+        if (pb!=null)   pb.nextBuild = nextBuild;
     }
 
     @Override
